@@ -1,8 +1,8 @@
 import "./App.css";
-import TextBox from "./components/TextBox";
+import Calculator from "./components/Calculator";
 
 function App() {
-	return <TextBox />;
+	return <Calculator/>;
 }
 
 export default App;
