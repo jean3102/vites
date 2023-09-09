@@ -8,15 +8,21 @@ const Calculator = () => {
 	};
 
 	const calculateResult = () => {
-		let result = eval(input);
-
-		setInput(result);
+		try {
+			let result = eval(input);
+			
+			if (result === Infinity) throw new Error('you can not divide by 0');
+			if (isNaN(result)) throw new Error('Invalid regular expression:');
+			setInput(result);
+		} catch (error) {
+			clearResult()
+			alert(error);
+		}
 	};
 
 	const clearResult = () => {
 		setInput('');
 	};
-
 
 	return (
 		<table border={1}>
@@ -29,7 +35,6 @@ const Calculator = () => {
 							value={input}
 							readOnly
 						/>
-					
 					</td>
 				</tr>
 				<tr>
