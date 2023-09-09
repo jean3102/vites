@@ -8,22 +8,28 @@ const Calculator = () => {
 	};
 
 	const calculateResult = () => {
-        let result = eval(input);
-        console.log(`🚀 ------------ result:`, result)
-        console.log(`🚀 ------------ result:`,typeof result)
+		let result = eval(input);
+
 		setInput(result);
 	};
+
+	const clearResult = () => {
+		setInput('');
+	};
+
+
 	return (
 		<table border={1}>
 			<tbody>
 				<tr>
 					<td colSpan={3}>
 						<input
-                            placeholder='calculate'
+							data-testid="result"
 							type="text"
 							value={input}
 							readOnly
 						/>
+					
 					</td>
 				</tr>
 				<tr>
@@ -78,7 +84,19 @@ const Calculator = () => {
 						<button onClick={() => handleValue('-')}>-</button>
 					</td>
 					<td>
-						<button onClick={calculateResult}>=</button>
+						<button onClick={clearResult}>C</button>
+					</td>
+				</tr>
+				<tr>
+					<td colSpan={2}>
+						<button
+							style={{ width: '100%' }}
+							onClick={calculateResult}>
+							=
+						</button>
+					</td>
+					<td>
+						<button onClick={() => handleValue('.')}>.</button>
 					</td>
 				</tr>
 			</tbody>
