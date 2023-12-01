@@ -9,13 +9,13 @@ const Calculator = () => {
 
 	const calculateResult = () => {
 		try {
-			let result = eval(input);
-			
+			const result = eval(input);
+
 			if (result === Infinity) throw new Error('you can not divide by 0');
 			if (isNaN(result)) throw new Error('Invalid regular expression:');
 			setInput(result);
 		} catch (error) {
-			clearResult()
+			clearResult();
 			alert(error);
 		}
 	};

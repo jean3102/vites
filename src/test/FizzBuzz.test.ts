@@ -21,6 +21,7 @@ describe('FizzBuzz Exercises', () => {
 	test('show the number is not multiple of 3 or 5', () => {
 		expect(FizzBuzz(1)).toBe(1);
 	});
+	
 	test('show the number is not multiple of 7', () => {
 		expect(FizzBuzz(7)).toBe('Woff');
 	});

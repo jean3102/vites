@@ -8,8 +8,6 @@ function App() {
 			const res = FizzBuzz(index)
 			console.log(`🚀 ------------ res:`, res)
 		}
-		// const res = FizzBuzz(3)
-		// console.log(`🚀 ------------ res:`, res)
 	}
 
 
